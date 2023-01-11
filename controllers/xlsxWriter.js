@@ -12,9 +12,10 @@ module.exports = {
        rawText = rawText.replace(/[\t\r\n]+/g, ' ')
       
        const jobNumber = await readFiles.getJobNumber(rawText)
-       //const clientName = await readFiles.getClientName(rawText)
+       const clientName = await readFiles.getClientName(rawText)
 
-        worksheet.getCell('C6').value = jobNumber
+       worksheet.getCell('C6').value = jobNumber
+       worksheet.getCell('C8').value = clientName
     
     
        for (let i = 0; i < fileData.length; i++) {

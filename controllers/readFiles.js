@@ -28,6 +28,7 @@ module.exports = {
       const match = rawText.match(regex) 
       const clientName = match[0].substring(7, match[0].length -8).trim()
       console.log('clientName' , clientName)
+      return clientName
     }
 
 
