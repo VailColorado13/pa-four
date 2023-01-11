@@ -83,7 +83,7 @@ module.exports = {
         
         //return result. It will be a 2D array that takes the following structure: 
         //[[ISCI, title], [ISCI, title]]
-        
+        console.log('titleParser', result)
         return result
 
     }
