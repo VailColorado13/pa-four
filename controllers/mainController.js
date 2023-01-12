@@ -8,7 +8,13 @@ const xlsxWriter = require('../controllers/xlsxWriter')
 
 module.exports = {
     pageLoad: async (req, res) => {
-        res.render('index')
+        res.render('index', {titleData: [[],[]]})
+    },
+
+    pageLoadWithTableData : async (req, res) => {
+        const fileData = await readFiles.readAndExtract()
+        const titleData = await titleParser.parse(fileData)
+        res.render('index', {titleData: titleData})
     },
 
     uploadFiles: async (req, res, next) => {
@@ -23,9 +29,8 @@ module.exports = {
     readFiles: async (req, res) => {
       const fileData = await readFiles.readAndExtract()
       const titleData = await titleParser.parse(fileData)
-
       const writeXlsx = await xlsxWriter.write(titleData, fileData[1]) 
-        res.redirect('/')
+        res.redirect('/written')
     }
     
 }

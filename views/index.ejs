@@ -24,11 +24,40 @@
         </section>
     </main>
 
-    <!-- <div>
-        <form method="post" action= "/upload" enctype="multipart/form-data">
-            <input type= "file" name = "files" multiple/>
-            <button type = "submit">Upload</button>
+   
+    <table>
+        <tr>
+            <th>ISCI</th>
+            <th>Title</th>
+        </tr>
+
+        <!-- renders table data -->
+        <% for(let i=0; i < titleData.length; i++) {%>
+            <tr>
+                <td><%= titleData[i][0] %></td>
+                <td><%= titleData[i][1] %></td>
+            </tr>
+        <% } %>
+       
+        <!-- renders empty table so the page has 12 rows no matter what -->
+        <% for(let i=0; i < 12 - titleData.length; i++) {%>
+            <tr>
+                <td><%=  %></td>
+                <td><%=  %></td>
+            </tr>
+        <% } %>
+    </table>
+
+
+    <section class="downloadArea">
+        <i class="far fa-file-excel"></i>
+        <form action="/newEstimate" method="READ">
+            <input type="submit" value="Download New Estimate" disabled>
         </form>
-    </div> -->
+        
+    </section>
+
+
+
 </body>
 </html>
