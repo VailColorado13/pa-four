@@ -57,6 +57,10 @@ table, th, td {
     border-radius: 15px;
   }
 
+  .droparea form {
+    margin-bottom: 30px;
+  }
+
   .downloadArea {
     border-color: darkgray;
     margin-top: 4rem;
@@ -89,8 +93,8 @@ table, th, td {
   }
 
   .green-border{
-    border-color: rgb(24, 92, 55);
-    background-color: rgba(16, 121, 63, .3)
+    border-color: rgb(0, 125, 67);
+    background-color: rgba(0, 164, 104, .3)
   }
 
   
@@ -98,11 +102,17 @@ table, th, td {
     color: black;
   }
 
+  .downloadArea div {
+    display: flex;
+}
 
+  
   input[type="submit"]:enabled {
-    background-color: rgb(24, 92, 55); /* a modern color like Microsoft Word blue */
+    
+    background-color: rgb(0, 125, 67); /* a modern color like Microsoft Word blue */
     color: white; /* white text */
     padding: 12px 24px; /* add padding for button size and spacing */
+    margin: 10px 2px;
     font-size: 16px; /* adjust font size */
     cursor: pointer; /* change cursor to pointer on hover */
     text-align: center; /* center the text */
@@ -111,9 +121,11 @@ table, th, td {
 }
 
 input[type="submit"]:disabled {
+
   background-color: darkgray; /* a modern color like Microsoft Word blue */
   color: white; /* white text */
   padding: 12px 24px; /* add padding for button size and spacing */
+  margin: 10px 2px;
   font-size: 16px; /* adjust font size */
   text-align: center; /* center the text */
   border: none;

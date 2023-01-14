@@ -23,7 +23,7 @@
             </form>
            
             
-            <p><small>Up to 12 ISCI codes at at time.</small></p>
+            <!-- <p><small>Up to 12 ISCI codes at at time.</small></p> -->
         </section>
     </main>
 
@@ -53,11 +53,15 @@
 
 
     <section class="downloadArea <%= downloadEnabled ? 'green-border' : '' %>">
-        <i class="far fa-file-excel  <%= downloadEnabled ? 'black' : '' %>"></i>       
-         <form action="/downloadNewEstimate" method="READ">
-          <input type="submit" value="Download New Estimate" <%= downloadEnabled ? '' : 'disabled' %> > 
-        </form>
-        
+        <i class="far fa-file-excel  <%= downloadEnabled ? 'black' : '' %>"></i> 
+        <div>      
+             <form action="/downloadNewEstimate" method="READ">
+              <input type="submit" value="Download New Estimate" <%= downloadEnabled ? '' :     'disabled' %> > 
+            </form>
+            <form action="/" method="GET">
+                <input type="submit" value="Start Over" <%= downloadEnabled ? '' : 'disabled'   %> > 
+            </form>
+        </div>
     </section>
 
 
