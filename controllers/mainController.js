@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const uploader = require('../uploader')
 const readFiles = require('../controllers/readFiles')
 const titleParser = require('../controllers/titleParser')
@@ -15,6 +16,11 @@ module.exports = {
         const fileData = await readFiles.readAndExtract()
         const titleData = await titleParser.parse(fileData)
         res.render('index', {titleData: titleData, downloadEnabled: true})
+    },
+
+    sendEstimate: (req, res) => {
+        const filePath = path.join(__dirname, '..', 'newEstimate.xlsx');
+        res.sendFile(filePath);
     },
 
     uploadFiles: async (req, res, next) => {
