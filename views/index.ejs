@@ -11,15 +11,18 @@
     <title>Production Assistant</title>
 </head>
 <body>
+    <h1>PRODUCTION ASSISTANT 3.0</h1>
 
     <main>
         <section class="droparea">
             <i class="far fa-file-word"></i>
+            
             <form method="post" action= "/upload" enctype="multipart/form-data">
-                <input type= "file" name = "files" multiple/>
-                <button type = "submit">Upload</button>
+                    <input type= "file" name = "files" multiple/>
+                    <button type = "submit">Upload</button>
             </form>
-            <p>Drop your scripts here.</p>
+           
+            
             <p><small>Up to 12 ISCI codes at at time.</small></p>
         </section>
     </main>
@@ -52,7 +55,6 @@
     <section class="downloadArea <%= downloadEnabled ? 'green-border' : '' %>">
         <i class="far fa-file-excel  <%= downloadEnabled ? 'black' : '' %>"></i>       
          <form action="/downloadNewEstimate" method="READ">
-
           <input type="submit" value="Download New Estimate" <%= downloadEnabled ? '' : 'disabled' %> > 
         </form>
         

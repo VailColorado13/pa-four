@@ -82,7 +82,8 @@ table, th, td {
   }
 
   
-  .blue-border {
+
+  .droparea:hover {
     border-color: rgb(37, 112, 232);
     background-color: rgba(200,240,248, 0.75);
   }
@@ -96,3 +97,28 @@ table, th, td {
   .downloadArea i.black {
     color: black;
   }
+
+
+  input[type="submit"]:enabled {
+    background-color: rgb(24, 92, 55); /* a modern color like Microsoft Word blue */
+    color: white; /* white text */
+    padding: 12px 24px; /* add padding for button size and spacing */
+    font-size: 16px; /* adjust font size */
+    cursor: pointer; /* change cursor to pointer on hover */
+    text-align: center; /* center the text */
+    border: none;
+    border-radius: 4px; /* add a small border radius */
+}
+
+input[type="submit"]:disabled {
+  background-color: darkgray; /* a modern color like Microsoft Word blue */
+  color: white; /* white text */
+  padding: 12px 24px; /* add padding for button size and spacing */
+  font-size: 16px; /* adjust font size */
+  text-align: center; /* center the text */
+  border: none;
+  border-radius: 4px; /* add a small border radius */
+}
+
+
+
