@@ -49,10 +49,11 @@
     </table>
 
 
-    <section class="downloadArea">
-        <i class="far fa-file-excel"></i>
-        <form action="/newEstimate" method="READ">
-            <input type="submit" value="Download New Estimate" disabled>
+    <section class="downloadArea <%= downloadEnabled ? 'green-border' : '' %>">
+        <i class="far fa-file-excel  <%= downloadEnabled ? 'black' : '' %>"></i>       
+         <form action="/downloadNewEstimate" method="READ">
+
+          <input type="submit" value="Download New Estimate" <%= downloadEnabled ? '' : 'disabled' %> > 
         </form>
         
     </section>

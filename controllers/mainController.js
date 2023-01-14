@@ -8,13 +8,13 @@ const xlsxWriter = require('../controllers/xlsxWriter')
 
 module.exports = {
     pageLoad: async (req, res) => {
-        res.render('index', {titleData: [[],[]]})
+        res.render('index', {titleData: [[],[]], downloadEnabled: false})
     },
 
     pageLoadWithTableData : async (req, res) => {
         const fileData = await readFiles.readAndExtract()
         const titleData = await titleParser.parse(fileData)
-        res.render('index', {titleData: titleData})
+        res.render('index', {titleData: titleData, downloadEnabled: true})
     },
 
     uploadFiles: async (req, res, next) => {
