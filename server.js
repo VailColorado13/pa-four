@@ -15,6 +15,6 @@ app.use('/', mainRoutes)
 
 
 
-app.listen(1337, () => {
-    console.log(`server running on 1337`)
-})
+app.listen(process.env.PORT || 1337, ()=>{
+    console.log('Server is running.')
+})    
