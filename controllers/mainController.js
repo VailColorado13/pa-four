@@ -10,11 +10,14 @@ const xlsxWriter = require('../controllers/xlsxWriter')
 
 module.exports = {
     pageLoad: async (req, res) => {
+
         try {
             fs.rmSync('uploads', { recursive: true })
             fs.mkdirSync('uploads')
         } catch (err) {
-            console.error(err)
+            if (err) {
+                fs.mkdirSync('uploads')
+            }
         }
         res.render('index', {titleData: [[],[]], downloadEnabled: false})
     },
