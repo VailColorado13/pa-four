@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs')
 const path = require('path')
 const uploader = require('../uploader')
 const readFiles = require('../controllers/readFiles')
@@ -9,6 +10,12 @@ const xlsxWriter = require('../controllers/xlsxWriter')
 
 module.exports = {
     pageLoad: async (req, res) => {
+        try {
+            fs.rmSync('uploads', { recursive: true })
+            fs.mkdirSync('uploads')
+        } catch (err) {
+            console.error(err)
+        }
         res.render('index', {titleData: [[],[]], downloadEnabled: false})
     },
 
@@ -19,7 +26,7 @@ module.exports = {
     },
 
     sendEstimate: (req, res) => {
-        const filePath = path.join(__dirname, '..', 'newEstimate.xlsx');
+        const filePath = path.join(__dirname, '..', 'newEstimate.xlsx')
         res.sendFile(filePath);
     },
 
