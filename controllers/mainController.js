@@ -10,7 +10,7 @@ const xlsxWriter = require('../controllers/xlsxWriter')
 
 module.exports = {
     pageLoad: async (req, res) => {
-
+        //on pageload, we must generate an empty 'uploads' folder
         try {
             fs.rmSync('uploads', { recursive: true })
             fs.mkdirSync('uploads')
