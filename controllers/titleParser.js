@@ -7,6 +7,7 @@ module.exports = {
         titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
         //remove ' and " 
         titles.forEach((title, i) => titles[i] = title.replace( /['"]/g, ''))
+        console.log(titles)
         //remove underscores
         titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
         //remove .docx suffix
