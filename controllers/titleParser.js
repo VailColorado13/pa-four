@@ -5,6 +5,8 @@ module.exports = {
 
         //typo control: remove extra spaces
         titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
+        //remove ' and " 
+        titles.forEach((title, i) => titles[i] = title.replace( /['"]/g, ''))
         //remove underscores
         titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
         //remove .docx suffix
