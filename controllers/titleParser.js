@@ -29,6 +29,9 @@ module.exports = {
              if (splitTitles[i][j].includes('(')) {
                 lengthArr.push(splitTitles[i].splice(j, 1))
                 }
+                if (splitTitles[i][j].includes(')')) {
+                    lengthArr.push(splitTitles[i].splice(j, 1))
+                    }
             }
          }
 
