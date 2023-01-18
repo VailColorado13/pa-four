@@ -6,7 +6,8 @@ module.exports = {
         //typo control: remove extra spaces
         titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
         //remove ' and " 
-        titles.forEach((title, i) => titles[i] = title.replace( /['"]/g, ''))
+        titles.forEach((title, i) => titles[i] = title.replace( /â\x80\x98/g, ''))
+        titles.forEach((title, i) => titles[i] = title.replace( /%22/g, ''))
         console.log(titles)
         //remove underscores
         titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
