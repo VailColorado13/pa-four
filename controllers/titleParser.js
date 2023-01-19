@@ -8,10 +8,8 @@ module.exports = {
 
         //typo control: remove extra spaces
         titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
-
-        //Remove ' (for example '23 => 23)
-        titles.forEach((title, i) => titles[i] = title.replace(/â\x80\x98/g, '')) 
-        
+        //remove underscores
+        titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
         //remove .docx suffix
         titles.forEach((title, i) => titles[i] = title.split('.d')[0]) 
 
@@ -30,9 +28,6 @@ module.exports = {
             for (let j = 0; j < splitTitles[i].length; j++) {
              if (splitTitles[i][j].includes('(')) {
                 lengthArr.push(splitTitles[i].splice(j, 1))
-                }
-             if (splitTitles[i][j].includes(')')) {
-                 lengthArr.push(splitTitles[i].splice(j, 1))
                 }
             }
          }
