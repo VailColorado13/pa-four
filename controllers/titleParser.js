@@ -5,7 +5,6 @@ module.exports = {
 
         //remove underscores
         titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
-
         //typo control: remove extra spaces
         titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
         //remove underscores
@@ -27,6 +26,9 @@ module.exports = {
         for (let i = 0; i < splitTitles.length; i++) {
             for (let j = 0; j < splitTitles[i].length; j++) {
              if (splitTitles[i][j].includes('(')) {
+                lengthArr.push(splitTitles[i].splice(j, 1))
+                }
+            if (splitTitles[i][j].includes('(')) {
                 lengthArr.push(splitTitles[i].splice(j, 1))
                 }
             }
