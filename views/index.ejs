@@ -37,7 +37,7 @@
         <!-- renders table data -->
         <% for(let i=0; i < titleData.length; i++) {%>
             <tr>
-                <td><%= titleData[i][0] %></td>
+                <td class = 'ISCIs'><%= titleData[i][0] %></td>
                 <td><%= titleData[i][1] %></td>
             </tr>
         <% } %>
@@ -45,7 +45,7 @@
         <!-- renders empty table so the page has 12 rows no matter what -->
         <% for(let i=0; i < 12 - titleData.length; i++) {%>
             <tr>
-                <td><%=  %></td>
+                <td class = 'ISCIs' ><%=  %></td>
                 <td><%=  %></td>
             </tr>
         <% } %>
@@ -64,7 +64,7 @@
         </div>
     </section>
 
-
+    <script src = 'main.js'></script>
 
 </body>
 </html>

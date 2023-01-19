@@ -3,10 +3,15 @@ module.exports = {
 
         const titles = fileData[0]
 
-        //typo control: remove extra spaces
-        titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
         //remove underscores
         titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
+
+        //typo control: remove extra spaces
+        titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
+
+        //Remove ' (for example '23 => 23)
+        titles.forEach((title, i) => titles[i] = title.replace(/â\x80\x98/g, '')) 
+        
         //remove .docx suffix
         titles.forEach((title, i) => titles[i] = title.split('.d')[0]) 
 
@@ -25,6 +30,9 @@ module.exports = {
             for (let j = 0; j < splitTitles[i].length; j++) {
              if (splitTitles[i][j].includes('(')) {
                 lengthArr.push(splitTitles[i].splice(j, 1))
+                }
+             if (splitTitles[i][j].includes(')')) {
+                 lengthArr.push(splitTitles[i].splice(j, 1))
                 }
             }
          }
@@ -76,6 +84,9 @@ module.exports = {
         let allTitles = singleTitlesNoISCIs.concat(doubleISCItitlesNoISCI)
 
         let result = []
+
+        console.log('allISCIs' , allISCIs)
+        console.log('allTitles' , allTitles)
 
         for (let i = 0; i < allISCIs.length; i++) {
             result.push([allISCIs[i].join(''), allTitles[i].join(' ')])

@@ -47,8 +47,8 @@ module.exports = {
       const titleData = await titleParser.parse(fileData)
       const writeXlsx = await xlsxWriter.write(titleData, fileData[1]) 
         res.redirect('/written')
-    }
-    
+    }, 
+
 }
 
 
