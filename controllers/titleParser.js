@@ -82,8 +82,7 @@ module.exports = {
 
         let result = []
 
-        console.log('allISCIs' , allISCIs)
-        console.log('allTitles' , allTitles)
+    
 
         for (let i = 0; i < allISCIs.length; i++) {
             result.push([allISCIs[i].join(''), allTitles[i].join(' ')])
