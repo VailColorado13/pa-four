@@ -3,12 +3,12 @@ module.exports = {
 
         const titles = fileData[0]
 
+        //remove ' and " 
+        titles.forEach((title, i) => titles[i] = title.replace(/["']/g, ' '))
         //remove underscores
         titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
         //typo control: remove extra spaces
         titles.forEach((title, i) => titles[i] = title.replace(/\s\s+/g, ' ')) 
-        //remove underscores
-        titles.forEach((title, i) => titles[i] = title.split('_').join(' ')) 
         //remove .docx suffix
         titles.forEach((title, i) => titles[i] = title.split('.d')[0]) 
 
