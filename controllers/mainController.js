@@ -34,12 +34,14 @@ module.exports = {
     },
 
     uploadFiles: async (req, res, next) => {
+        try {
         const uploadPromise = new Promise((resolve, reject) => {
             uploader(req, res, (error) => {if (error) {reject(error)}
              else {resolve()}
             })
             res.redirect('/readFiles')
           })
+        }catch(err) {console.log('uploader error',err)}
     }, 
 
     readFiles: async (req, res) => {
